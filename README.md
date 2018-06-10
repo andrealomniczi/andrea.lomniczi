@@ -18,10 +18,20 @@ F2 = Frame(ventana, width = 300,height = 700, relief=RIDGE)
 F2.pack(side=RIGHT)
 
 
-lblInfo = Label(Tops, font = ('arial',40, 'bold'),text= "Cotizador de eventos", fg = "goldenrod", bd=10, anchor='w')
-lblInfo.grid(row=0, column=0)
 
-#----------------------------------Nombre del Cliente------------------------------------
+#------------------------------------Titulo-----------------------------------------------------------------------
+Titulo = Label(Tops, font = ('arial',40, 'bold'),text= "Cotizador de eventos", fg = "goldenrod", bd=10, anchor='w')
+Titulo.grid(row=0, column=0)
+
+#---------------------------------------Menus--------------------------------------------------------------------
+menu1= Label(Tops, font=('arial',25,'bold'), text = "Menu 1:", bd=12, anchor = 'w')
+menu1.grid(row=1, column=0)
+menu11= Label(Tops, font=('arial',12,'bold'), text = "- Barra de Ensaladas", bd=12, anchor = 'w', justify= 'left')
+menu11.grid(row=2, column=0)
+menu12= Label(Tops, font=('arial',12,'bold'), text = "- Ravioles", bd=12, anchor = 'w', justify= 'left')
+menu12.grid(row=3, column=0)
+
+#----------------------------------Nombre del Cliente---------------------------------------------------------------
 Nombre = Label(F1, font=('arial',12,'bold'), text = "Nombre", bd=12, anchor = 'w')
 Nombre.grid(row=0, column=0)
 txtNombre=Entry(F1, font=('arial',12,'bold'), textvariable=Nombre, bd=6, insertwidth=4,
