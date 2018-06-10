@@ -1,46 +1,58 @@
-# andrea.lomniczi
 from Tkinter import *
-ventana=Tk()
+import random
+
+ventana = Tk()
 ventana.geometry("1600x800+0+0")
 ventana.title("Cotizador de eventos")
+
 text_Input = StringVar()
+operator = ""
 
-Tops = Frame(ventana, width = 1600,height = 50,bg="Powder blue", relief=SUNKEN)
-lblInfo = Label(Tops, font = ('arial',40, 'bold'),text= "Restaurant Management System", fg = "Steel Blue", bd=10, anchor='w')
+Tops = Frame(ventana, width = 1600,height = 50,bg="Powder blue", relief=RIDGE)
+Tops.pack(side=TOP)
+
+F1 = Frame(ventana, width = 800,height = 700, relief=RIDGE)
+F1.pack(side=LEFT)
+
+F2 = Frame(ventana, width = 300,height = 700, relief=RIDGE)
+F2.pack(side=RIGHT)
+
+
+lblInfo = Label(Tops, font = ('arial',40, 'bold'),text= "Cotizador de eventos", fg = "Steel Blue", bd=10, anchor='w')
 lblInfo.grid(row=0, column=0)
-# row 1 : the name
-nombre_label = Label(text="Nombre :")
-nombre_label.grid(row=3,column=3)
-nombre_str = StringVar()
-nombre_entry = Entry(textvariable=nombre_str)
-nombre_entry.grid(row=3,column=4)
-#row 2 : the last name
-last_label= Label(text="Apellido : ")
-last_label.grid(row=4,column=3)
-last_str = StringVar()
-last_entry = Entry(textvariable=last_str)
-last_entry.grid(row=4,column=4)
-#row 3 : the email
-mail_label = Label(text="Email : ")
-mail_label.grid(row=5,column=3)
-mail_str = StringVar()
-mail_entry = Entry(textvariable=mail_str)
-mail_entry.grid(row=5,column=4)
-#cosas
-def Ref():
-    CdI = float(Invitados.get())
-    CdT = float(Toldo.get())
-    MdT=float(MToldo.get())
-    CdB = float(Buffet.get())
-    CdM =float(Mozos.get())
-    CdL = float(Local.get())
-    CdB = float(Bebidas.get())
 
-    CostoDeToldo = CdT * 300
-    CostodeBebidas = CdI * 4.50
-  
+#-------------------------------------------Nombre del Cliente------------------------------------------------------------
+Nombre = Label(F1, font=('arial',12,'bold'), text = "Nombre", bd=12, anchor = 'w')
+Nombre.grid(row=0, column=0)
+txtNombre=Entry(F1, font=('arial',12,'bold'), textvariable=Nombre, bd=6, insertwidth=4,
+                               bg = "powder blue", justify = 'left')
+txtNombre.grid(row=0, column=1)
 
-#row 4 : end
-finish = Button(text="finalizar",relief=FLAT)
-finish.grid(row=4,column=2)
+#-----------------------------------------Apellido del Cliente------------------------------------------------------------
+Apellido = Label(F1, font=('arial',12,'bold'), text = "Apellido", bd=12, anchor = 'w')
+Apellido.grid(row=1, column=0)
+txtApellido=Entry(F1, font=('arial',12,'bold'), textvariable=Apellido, bd=6, insertwidth=4,
+                               bg = "powder blue", justify = 'left')
+txtApellido.grid(row=1, column=1)
+
+#-------------------------------------------Email del Cliente--------------------------------------------------------------
+Email = Label(F1, font=('arial',12,'bold'), text = "Email", bd=12, anchor = 'w')
+Email.grid(row=2, column=0)
+txtEmail=Entry(F1, font=('arial',12,'bold'), textvariable=Email, bd=6, insertwidth=4,
+                               bg = "powder blue", justify = 'left')
+txtEmail.grid(row=2, column=1)
+
+#--------------------------------------------Numero de contacto del Cliente------------------------------------------------
+Telefono = Label(F1, font=('arial',12,'bold'), text = "Telefono", bd=12, anchor = 'w')
+Telefono.grid(row=3, column=0)
+txtTelefono=Entry(F1, font=('arial',12,'bold'), textvariable=Telefono, bd=6, insertwidth=4,
+                               bg = "powder blue", justify = 'left')
+txtTelefono.grid(row=3, column=1)
+
+
+
+
+
+
+
 ventana.mainloop()
